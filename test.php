@@ -1,5 +1,5 @@
 <?php
-$names = {Justas, Kasparas};
+$names = {Justas, Kasparas, Lukas, Tomas};
 echo $names;
 echo phpinfo();
 ?>
