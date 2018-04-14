@@ -1,0 +1,10 @@
+.container{
+    margin-top: 40px;
+}
+.form-signin {
+    margin: 0 auto;
+    max-width: 400px;
+}
+.stylish-color-dark {
+    background-color: #3e4551 !important;
+}
