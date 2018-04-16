@@ -1,0 +1,49 @@
+security:
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    role_hierarchy:
+        ROLE_ADMIN: [ROLE_USER]
+    encoders:
+        Symfony\Component\Security\Core\User\User:
+          algorithm: bcrypt
+        App\Entity\Member:
+          algorithm: bcrypt
+    providers:
+        chain_provider:
+            chain:
+              providers: [in_memory, db_provider]
+        in_memory:
+            memory:
+              users:
+                admin:
+                  password: $2y$13$MVUzd8mlYj3jz3kKvCTp2.74TtUObJ9KVbykZi6Mzdy.DvSpmOzzG
+                  roles: 'ROLE_ADMIN'
+        db_provider:
+            entity:
+              class: App:Member
+              property: username
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            pattern: ^/
+            provider: chain_provider
+            form_login:
+              login_path: login
+              check_path: login
+            logout: true
+            anonymous: ~
+
+            # activate different ways to authenticate
+
+            # http_basic: true
+            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
+
+            # form_login: true
+            # https://symfony.com/doc/current/security/form_login_setup.html
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+          #- { path: ^/(login|register)$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+          #- { path: ^/, role: ROLE_USER }
