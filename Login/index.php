@@ -1,34 +1,41 @@
 <?php
 session_start();
-/**
- * Created by PhpStorm.
- * User: justas
- * Date: 18.3.13
- * Time: 10.15
- */
 
-include "User.php";
+define('DB_SERVER', 'localhost');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', 'admin');
+define('DB_NAME', 'cars');
 
-$user = new User();
-$user->username = "John";
-$user->password = "123";
-$user->email = "John@mail.com";
-
-if(isset($_GET['logout'])) {
-    $_SESSION['username'] = '';
-    header('Location: ' . $_SERVER['PHP_SELF']);
+$connection = mysqli_connect('localhost', 'root', 'admin');
+if (!$connection){
+    die("Database Connection Failed" . mysqli_error($connection));
 }
+$select_db = mysqli_select_db($connection, 'cars');
+if (!$select_db){
+    die("Database Selection Failed" . mysqli_error($connection));
+}
+//echo "Connected to DB successfully.";
 
-if(isset($_POST['username'])){
-    if($_POST['username'] === $user->username && $_POST['password'] === $user
-    ->password){
-    $_SESSION['username'] = $_POST['username'];
+if (isset($_POST['username']) and isset($_POST['password'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $query = "SELECT * FROM `user` WHERE e_mail='$username' and password='$password'";
+
+    $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
+    $count = mysqli_num_rows($result);
+    if ($count == 1) {
+        $_SESSION['username'] = $username;
     } else {
-        echo "Invalid login";
+        $fmsg = "Neteisingi prisijungimo duomenys.";
     }
 }
-?>
+elseif (isset($_GET['logout'])){
+session_start();
+session_destroy();
+header('Location: ' . $_SERVER['PHP_SELF']);
+}
 
+?>
 
 <html>
 <head>
@@ -44,13 +51,19 @@ if(isset($_POST['username'])){
             <a href="?logout=1">Logout</a>
             </p>
         <?php
-        } else {
+        }
+        else {
         ?>
             <form   name="login" action="" method="post">
                 Username: <input type="text" name="username" value="" /><br />
                 Password: <input type="password" name="password" value="" /><br />
                 <input type="submit" name="submit" value="Submit" />
             </form>
+            <?php
+                if (!empty($fmsg)){
+                    echo $fmsg;
+                }
+             ?>
         <?php
         }
     ?>
