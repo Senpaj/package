@@ -26,8 +26,10 @@
                     <div class="dropdown">
                         <button class="dropbtn">Profilis</button>
                         <div class="dropdown-content">
-                            <a href="#">Pakeisti slaptazodi</a>
-                            <a href="/profile">Pakeisti profili</a>
+                            <a href="#">Pakeisti slaptazodi
+                                <a href="profile/profileCreate/{{ app.user.id}}">Sukurti nauja profili</a>
+                                <a href="profile/profileDetails/{{ app.user.id}}">Profilis</a>
+
                             <a href="{{ logout_path('main') }}">Atsijungti</a>
 
                         </div>
