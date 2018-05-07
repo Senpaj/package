@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use App\Entity\UserInfo;
 
 /**
  * Member
@@ -21,6 +22,10 @@ class Member implements UserInterface, \Serializable
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+
+   
+
 
     /**
      * @var string
@@ -44,6 +49,12 @@ class Member implements UserInterface, \Serializable
     private $password;
 
     private $plainPassword;
+
+   /**
+     * One User has One UserInfo.
+    * @ORM\OneToOne(targetEntity="UserInfo", inversedBy="member", cascade = "remove")
+    */
+    private $userInfo;
 
     /**
      * Get id
@@ -182,5 +193,17 @@ class Member implements UserInterface, \Serializable
     {
         $this->plainPassword = null;
         // TODO: Implement eraseCredentials() method.
+    }
+
+    public function getUserInfo(): ?UserInfo
+    {
+        return $this->userInfo;
+    }
+
+    public function setUserInfo(UserInfo $userInfo): self
+    {
+        $this->userInfo = $userInfo;
+
+        return $this;
     }
 }
