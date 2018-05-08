@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use App\Entity\Member;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserInfoRepository")
@@ -50,6 +51,16 @@ class UserInfo
      * @ORM\Column(type="string", length=255)
      */
     private $description;
+
+
+    /**
+     * One User has One UserInfo.
+     * @ORM\OneToOne(targetEntity="Member", mappedBy="userInfo",  cascade = "remove")
+    * @ORM\JoinColumn(name="member_id", referencedColumnName="id")
+    */
+    private $member;
+
+
 
     public function getId()
     {
@@ -149,6 +160,7 @@ class UserInfo
             $this->city,
             $this->address,
             $this->description,
+            $this->member,
 
         ]);
         // TODO: Implement serialize() method.
@@ -163,9 +175,27 @@ class UserInfo
             $this->city,
             $this->address,
             $this->description,
+            $this->member,
 
             ) = unserialize($serialized);
         // TODO: Implement unserialize() method.
+    }
+
+    public function getMember(): ?Member
+    {
+        return $this->member;
+    }
+
+    public function setMember(Member $member): self
+    {
+        $this->member = $member;
+
+        // set the owning side of the relation if necessary
+        if ($this !== $member->getUserInfo()) {
+            $member->setUserInfo($this);
+        }
+
+        return $this;
     }
 
 }
