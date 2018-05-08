@@ -46,6 +46,13 @@ class Member implements UserInterface, \Serializable
     private $plainPassword;
 
     /**
+     * @var array
+     *
+     * @ORM\Column(type="json_array")
+     */
+    private $roles = [];
+
+    /**
      * Get id
      *
      * @return int
@@ -166,12 +173,18 @@ class Member implements UserInterface, \Serializable
 
     public function getRoles()
     {
-        return [
-            'ROLE_USER'
-        ];
+        $tmpRoles = $this->roles;
+
+        if(in_array('ROLE_USER', $tmpRoles) === false) {
+            $tmpRoles[] = 'ROLE_USER';
+        }
+        return $tmpRoles;
         // TODO: Implement getRoles() method.
     }
-
+    public  function setRoles($roles)
+    {
+        $this->roles = $roles;
+    }
     public function getSalt()
     {
 

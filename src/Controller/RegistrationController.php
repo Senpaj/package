@@ -35,6 +35,7 @@ class RegistrationController extends Controller
                 );
 
             $member->setPassword($password);
+            $member->setRoles(['ROLE_USER']);
 
             $em = $this->getDoctrine()->getManager();
 
