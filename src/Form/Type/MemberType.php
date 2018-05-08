@@ -4,6 +4,7 @@ namespace App\Form\Type;
 
 use App\Entity\Member;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
@@ -33,6 +34,7 @@ class MemberType extends AbstractType
             ])
             ->add('register', SubmitType::class);
     }
+
     /**
      * {@inheritdoc}
      * @throws \Symfony\Component\OptionsResolver\Exception\AccessEception
