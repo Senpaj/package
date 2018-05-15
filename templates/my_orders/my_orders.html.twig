@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello!{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <table class="table">
+            <thead>
+
+            <tr>
+                <th></th>
+                <th>#</th>
+                <th>Marke</th>
+                <th>Modelis</th>
+                <th>Aprasymas</th>
+                <th></th>
+            </tr>
+
+            </thead>
+            <tbody>
+
+            {% for order in pagination %}
+                {% if order.fk_client == app.user.id %}
+                <tr>
+                    <td></td>
+                    <th>{{ loop.index }}</th>
+                    <td>{{ order.auto_make }}</td>
+                    <td>{{ order.auto_model }}</td>
+                    <td>{{ order.description }}</td>
+                    <td>
+                        {#{{ path('user.edit', {id: user.id}) }}#}
+                        <a href="">
+                            <button type="button" class="btn btn-primary">Redaguoti</button>
+                        </a>
+                    </td>
+                </tr>
+                {% endif %}
+            {% endfor %}
+
+
+            </tbody>
+        </table>
+        <div class="text-center">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+
+        <a href="">
+            <button type="button" class="btn btn-default btn-xs">Naujas uzsakymas</button>
+        </a>
+    </div>
+
+
+
+{% endblock %}

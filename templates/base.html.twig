@@ -6,8 +6,7 @@
         <title>{% block title %}Welcome!{% endblock %} - Servisas Skiperis</title>
 
         {% block stylesheets %}
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-            <link rel="stylesheet" href="{{asset('css/mdb.css')}}">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">            <link rel="stylesheet" href="{{asset('css/mdb.css')}}">
             <link rel="stylesheet" href="{{asset('css/styles.css')}}">
             <link rel="stylesheet" href="{{asset('css/homenavbar.css')}}">
         {% endblock %}
@@ -26,15 +25,11 @@
                     <div class="dropdown">
                         <button class="dropbtn">{{app.user.username }}</button>
                         <div class="dropdown-content">
-                            <a href="#">Pakeisti slaptazodi</a>
-                            <a href="/profile">Pakeisti profili</a>
+                            <a href="/profile">Profilis</a>
                             {% if is_granted('ROLE_ADMIN') %}
                             <a href="/dashboard">Vartotojai</a>
                             {% endif %}
-                            <a href="#">Pakeisti slaptazodi
-                                <a href="profile/profileCreate/{{ app.user.id}}">Sukurti nauja profili</a>
-                                <a href="profile/profileDetails/{{ app.user.id}}">Profilis</a>
-
+                            <a href="/myorders">Mano uzsakymai</a>
                             <a href="{{ logout_path('main') }}">Atsijungti</a>
 
                         </div>
