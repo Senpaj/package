@@ -22,11 +22,6 @@ class Member implements UserInterface, \Serializable
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
-
-   
-
-
     /**
      * @var string
      *
@@ -208,7 +203,7 @@ class Member implements UserInterface, \Serializable
         // TODO: Implement eraseCredentials() method.
     }
 
-    public function getUserInfo(): ?UserInfo
+    public function getUserInfo()//: ?UserInfo
     {
         return $this->userInfo;
     }
