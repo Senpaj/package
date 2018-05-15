@@ -24,7 +24,7 @@
 
                 {% if app.user %}
                     <div class="dropdown">
-                        <button class="dropbtn">Profilis</button>
+                        <button class="dropbtn">{{app.user.username }}</button>
                         <div class="dropdown-content">
                             <a href="#">Pakeisti slaptazodi</a>
                             <a href="/profile">Pakeisti profili</a>
