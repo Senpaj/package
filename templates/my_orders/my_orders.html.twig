@@ -14,26 +14,43 @@
                 <th>Modelis</th>
                 <th>Aprasymas</th>
                 <th></th>
+                <th></th>
             </tr>
 
             </thead>
             <tbody>
 
             {% for order in pagination %}
-                {% if order.fk_client == app.user.id %}
-                <tr>
-                    <td></td>
-                    <th>{{ loop.index }}</th>
-                    <td>{{ order.auto_make }}</td>
-                    <td>{{ order.auto_model }}</td>
-                    <td>{{ order.description }}</td>
-                    <td>
-                        {#{{ path('user.edit', {id: user.id}) }}#}
-                        <a href="">
-                            <button type="button" class="btn btn-primary">Redaguoti</button>
-                        </a>
-                    </td>
-                </tr>
+                {% if (is_granted('ROLE_ADMIN')) or (order.fk_client == app.user.id) %}
+                    <tr>
+                        <td></td>
+                        <th>{{ loop.index }}</th>
+                        <td>{{ order.auto_make }}</td>
+                        <td>{{ order.auto_model }}</td>
+                        <td>{{ order.description }}</td>
+                        <td>
+                            {% if (order.status == 1) %}
+                                <button type="button" class="btn btn-warning btn-sm">Vykdomas</button>
+                            {% endif %}
+
+                            {% if (order.status == 0) %}
+                                <button type="button" class="btn btn-danger btn-sm">Atsauktas</button>
+                            {% endif %}
+
+                            {% if (order.status == 2) %}
+                                <button type="button" class="btn btn-success btn-sm">Baigtas</button>
+                            {% endif %}
+
+                        </td>
+                        {% if (is_granted('ROLE_ADMIN')) or (is_granted('ROLE_MECHANIC')) %}
+                        <td>
+                            {#{{ path('user.edit', {id: user.id}) }}#}
+                            <a href="">
+                                <button type="button" class="btn btn-primary">Redaguoti</button>
+                            </a>
+                        </td>
+                            {% endif %}
+                    </tr>
                 {% endif %}
             {% endfor %}
 
@@ -45,7 +62,7 @@
         </div>
 
         <a href="">
-            <button type="button" class="btn btn-default btn-xs">Naujas uzsakymas</button>
+            <button type="button" class="btn btn-default btn-md">Naujas uzsakymas</button>
         </a>
     </div>
 

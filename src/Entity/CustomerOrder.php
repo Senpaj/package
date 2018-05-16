@@ -39,6 +39,10 @@ class CustomerOrder
      * @ORM\Column(type="string", length=255)
      */
     private $auto_model;
+    /**
+     * @ORM\Column(type="integer", nullable = true)
+     */
+    private $status;
 
     public function getId()
     {
@@ -100,5 +104,18 @@ class CustomerOrder
         $this->description = $description;
 
         return $this;
+    }
+    public function getStatus()
+    {
+        $tmpStatus = $this->status;
+
+        if($tmpStatus === false) {
+            $tmpStatus = 1;
+        }
+        return $tmpStatus;
+    }
+    public  function setStatus($Status)
+    {
+        $this->status = $Status;
     }
 }
