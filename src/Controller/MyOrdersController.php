@@ -22,7 +22,17 @@ class MyOrdersController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
-        $orders = $em->getRepository('App:CustomerOrder')->findAll();
+        $User = $this->getUser();
+        if(in_array('ROLE_ADMIN', $User->getRoles()) ||
+            in_array('ROLE_MECHANIC', $User->getRoles()))
+                $orders = $em->getRepository('App:CustomerOrder')->findAll();
+
+        else {
+            $orders = $em->getRepository('App:CustomerOrder')
+                ->findBy(
+                    ['fk_client' => $User->getId()]
+                );
+        }
 
 
         $paginator  = $this->get('knp_paginator' );
