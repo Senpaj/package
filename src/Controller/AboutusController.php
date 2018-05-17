@@ -8,7 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class AboutusController extends Controller
 {
     /**
-     * @Route("/aboutus", name="info")
+     * @Route("/aboutus", name="aboutus")
      */
     public function index()
     {

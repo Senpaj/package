@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
+{% form_theme registration_form 'bootstrap_4_layout.html.twig' %}
 
 {% block body %}
-
+    <div class="container justify-content-between">
     {{ form(registration_form) }}
+    </div>
 
 {% endblock %}

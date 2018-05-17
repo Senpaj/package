@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Užsakymo pridėjimas
+{% endblock %}
+
+{% block body %}
+
+    <h2 class="page header">Užsakimo pridėjimas</h2>
+    <div class="container-fluid">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}

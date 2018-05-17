@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use App\Entity\UserInfo;
 
 /**
  * Member
@@ -21,7 +22,6 @@ class Member implements UserInterface, \Serializable
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
     /**
      * @var string
      *
@@ -44,6 +44,19 @@ class Member implements UserInterface, \Serializable
     private $password;
 
     private $plainPassword;
+
+   /**
+     * One User has One UserInfo.
+    * @ORM\OneToOne(targetEntity="UserInfo", inversedBy="member", cascade = "remove")
+    */
+    private $userInfo;
+
+    /**
+     * @var array
+     *
+     * @ORM\Column(type="json_array")
+     */
+    private $roles = [];
 
     /**
      * Get id
@@ -166,12 +179,18 @@ class Member implements UserInterface, \Serializable
 
     public function getRoles()
     {
-        return [
-            'ROLE_USER'
-        ];
+        $tmpRoles = $this->roles;
+
+        if(in_array('ROLE_USER', $tmpRoles) === false) {
+            $tmpRoles[] = 'ROLE_USER';
+        }
+        return $tmpRoles;
         // TODO: Implement getRoles() method.
     }
-
+    public  function setRoles($roles)
+    {
+        $this->roles = $roles;
+    }
     public function getSalt()
     {
 
@@ -182,5 +201,17 @@ class Member implements UserInterface, \Serializable
     {
         $this->plainPassword = null;
         // TODO: Implement eraseCredentials() method.
+    }
+
+    public function getUserInfo()//: ?UserInfo
+    {
+        return $this->userInfo;
+    }
+
+    public function setUserInfo(UserInfo $userInfo): self
+    {
+        $this->userInfo = $userInfo;
+
+        return $this;
     }
 }

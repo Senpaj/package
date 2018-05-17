@@ -25,8 +25,7 @@ class RegistrationController extends Controller
 
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid())
-        {
+        if ($form->isSubmitted() && $form->isValid()) {
             $password = $this
                 ->get('security.password_encoder')
                 ->encodePassword(
@@ -35,6 +34,7 @@ class RegistrationController extends Controller
                 );
 
             $member->setPassword($password);
+            $member->setRoles(['ROLE_USER']);
 
             $em = $this->getDoctrine()->getManager();
 
@@ -54,6 +54,25 @@ class RegistrationController extends Controller
             $this->addFlash('succes', 'You are now successfully registered!');
 
             $this->redirectToRoute('homepage');
+
+            $message = (new \Swift_Message('hello mail'))
+                ->setFrom('skiperispingvinauskas@gmail.com')
+                ->setTo($member->getEmail())
+                ->setBody(
+                    $this->renderView(
+                        'email/registrationEmail.html.twig',
+                        array('name' => $member->getUsername())
+                    ),
+                    'text/html'
+                );
+
+            $transport = (new \Swift_SmtpTransport('smtp.gmail.com', 465, 'ssl'))
+                ->setUsername('skiperispingvinauskas@gmail.com')
+                ->setPassword('skiperis11');
+
+            $mailer = new \Swift_Mailer($transport);
+
+            $mailer->send($message);
         }
 
 
