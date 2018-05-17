@@ -26,11 +26,15 @@
                     <div class="dropdown">
                         <button class="dropbtn">{{app.user.username }}</button>
                         <div class="dropdown-content">
-                            <a href="/profile">Profilis</a>
-                            {% if is_granted('ROLE_ADMIN') %}
-                            <a href="/dashboard">Vartotojai</a>
+                            {% if app.user.userInfo.id is defined %}
+                            <a href="{{ path('profileDetails', {'id': app.user.userInfo.id}) }}">Profilis</a>
+                            {% else %}
+                                <a href="{{ path('profileCreate') }}">Profilis</a>
                             {% endif %}
-                            <a href="/myorders">Mano uzsakymai</a>
+                            {% if is_granted('ROLE_ADMIN') %}
+                            <a href="{{ path('dashboard') }}">Vartotojai</a>
+                            {% endif %}
+                            <a href="{{ path('myorders') }}">Mano uzsakymai</a>
                             <a href="{{ logout_path('main') }}">Atsijungti</a>
 
                         </div>
