@@ -23,7 +23,7 @@ class ProfileController extends Controller
     /**
      * @Route("/profile/create", name="profileCreate")
      */
-    public function CreateProfileAction( Request $request)
+    public function CreateProfileAction(Request $request)
     {
 
         $userInfo = new UserInfo();
@@ -42,14 +42,13 @@ class ProfileController extends Controller
             $userInfo->setMember($member);
 
 
-
             $em = $this->getDoctrine()->getManager();
             $em->persist($userInfo);
             $em->persist($member);
             $em->flush();
 
 
-            return $this->redirectToRoute('profileDetails',   array(
+            return $this->redirectToRoute('profileDetails', array(
                 'id' => $userInfo->getId()));
         }
 
@@ -80,7 +79,7 @@ class ProfileController extends Controller
     /**
      * @Route("/profile/edit/{id}", name="profileEdit")
      */
-    public function ProfileEditAction($id, Request $request)
+    public function EditProfileAction($id, Request $request)
     {
 
         $userInfo = $this->getDoctrine()->getRepository('App:UserInfo')
@@ -110,7 +109,7 @@ class ProfileController extends Controller
                 'Profile Updated'
             );
 
-            return $this->redirectToRoute('profileDetails',   array(
+            return $this->redirectToRoute('profileDetails', array(
                 'id' => $userInfo->getId()));
         }
 

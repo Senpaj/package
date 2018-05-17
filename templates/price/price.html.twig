@@ -1,0 +1,549 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Kainos
+{% endblock %}
+
+{% block body %}
+
+
+<h1 style="text-align:justify;"> AUTOMOBILIŲ REMONTO KAINOS KAUNE</h1><p style="text-align:justify;"><br/></p>
+<table class="table table-stripped">
+    <tbody>
+    <tr>
+        <td><strong>Variklio remontas</strong></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Kapitalinis variklio remontas</td>
+        <td>nuo 150</td>
+    </tr>
+    <tr>
+        <td>Pagrindinio diržo keitimas</td>
+        <td>nuo 120 €</td>
+    </tr>
+    <tr>
+        <td>Žvakių keitimas</td>
+        <td>nuo 3 €</td>
+    </tr>
+    <tr>
+        <td>Pakaitinimo žvakių keitimas</td>
+        <td>nuo 5 €</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><strong>Pavarų dėžės remontas</strong></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Mechaninės pavarų dėžės remontas</td>
+        <td>nuo 60 €</td>
+    </tr>
+    <tr>
+        <td>Automatinės pavarų dėžės remontas</td>
+        <td>nuo 150 €</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><strong>Automobilių techninis aptarnavimas ir remontas:</strong></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Rato nuėmimas/pastatymas</td>
+        <td>nuo 2,5 €</td>
+    </tr>
+    <tr>
+        <td>Ratų montavimas</td>
+        <td>nuo 4 €</td>
+    </tr>
+    <tr>
+        <td>Ratų balansavimas</td>
+        <td>nuo 4 €</td>
+    </tr>
+    <tr>
+        <td>Padangų montavimas/balansavimas ( 4 vnt.) Metaliniai diskai</td>
+        <td>nuo 25 €</td>
+    </tr>
+    <tr>
+        <td>Padangų montavimas/balansavimas ( 4 vnt.) Lieti diskai</td>
+        <td>nuo 30 €</td>
+    </tr>
+    <tr>
+        <td>Padangų montavimas/balansavimas ( 4 vnt.) Džipams, busams</td>
+        <td>30-50 €</td>
+    </tr>
+    <tr>
+        <td>Padangų montavimas/balansavimas ( 4 vnt.) 17-24 diametro</td>
+        <td>30-60 €</td>
+    </tr>
+    <tr>
+        <td>Ratų saugojimas iki kito sezono</td>
+        <td>nuo 18 €</td>
+    </tr>
+    <tr>
+        <td>Padangų remontas</td>
+        <td>4-30 €</td>
+    </tr>
+    <tr>
+        <td>Ratlankio lyginimas</td>
+        <td>nuo 20 €</td>
+    </tr>
+    <tr>
+        <td>Suvirinimo darbai (1 val.)</td>
+        <td>nuo 30 €</td>
+    </tr>
+    <tr>
+        <td>Šaltkalvio darbai (1 val.)</td>
+        <td>nuo 28 €</td>
+    </tr>
+    <tr>
+        <td>Priekinių žibintų reguliavimas</td>
+        <td>nuo 10 €</td>
+    </tr>
+    <tr>
+        <td>Lemputės keitimas žibinte</td>
+        <td>nuo 3 €</td>
+    </tr>
+    <tr>
+        <td>Tepalų keitimas variklyje</td>
+        <td>nuo 0 €</td>
+    </tr>
+    <tr>
+        <td>Tepalų keitimas pavarų dėžeje mechaninėje</td>
+        <td>nuo 20 €</td>
+    </tr>
+    <tr>
+        <td>Tepalų keitimas pavarų dėžeje automatinėje</td>
+        <td>nuo 30 €</td>
+    </tr>
+    <tr>
+        <td>Tepalų keitimas reduktoriuje</td>
+        <td>nuo 15 €</td>
+    </tr>
+    <tr>
+        <td>Oro filtro keitimas</td>
+        <td>nuo 0 €</td>
+    </tr>
+    <tr>
+        <td>Kuro filtro keitimas</td>
+        <td>nuo 5 €</td>
+    </tr>
+    <tr>
+        <td>Važiuoklės patikra</td>
+        <td>nuo 15 €</td>
+    </tr>
+    <tr>
+        <td>Variklio alyvos lygio patikrinimas ir papildymas</td>
+        <td>nuo 5 €</td>
+    </tr>
+    <tr>
+        <td>Pavarų dežės alyvos lygio patikrinimas ir papildymas</td>
+        <td>nuo 10 €</td>
+    </tr>
+    <tr>
+        <td>Reduktoriaus alyvos lygio patikrinimas ir papildymas</td>
+        <td>nuo 10 €</td>
+    </tr>
+    <tr>
+        <td>Eksploatacinių skysčių lygio patikrinimas ir papildymas</td>
+        <td>nuo 5 €</td>
+    </tr>
+    <tr>
+        <td>Elektrolito lygio akumuliatoriuje patikrinimas ir papildymas</td>
+        <td>nuo 5 €</td>
+    </tr>
+    <tr>
+        <td>Aušinimo skysčio keitimas su nuorinimu</td>
+        <td>nuo 25 €</td>
+    </tr>
+    <tr>
+        <td>Stiklo apiplovimo siurbliuko keitimas</td>
+        <td>nuo 10 €</td>
+    </tr>
+    <tr>
+        <td>Kompresijos matavimas benzininiam/dyzeliniam varikliui, cil.</td>
+        <td>nuo 5/10 €</td>
+    </tr>
+    <tr>
+        <td>Oil (servis) intervalo nulinimas</td>
+        <td>nuo 10 €</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><strong>Važiuoklė</strong></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Ratų geometrijos reguliavimas</td>
+        <td>nuo 25 €</td>
+    </tr>
+    <tr>
+        <td>Apatinės šakės sailentblokų keitimas</td>
+        <td>20-35 €</td>
+    </tr>
+    <tr>
+        <td>Viršutinės šakės sailentblokų keitimas</td>
+        <td>20-40 €</td>
+    </tr>
+    <tr>
+        <td>Apatinės šakės šarnyro keitimas</td>
+        <td>15-30 €</td>
+    </tr>
+    <tr>
+        <td>Viršutinės šakės šarnyro keitimas</td>
+        <td>15-30</td>
+    </tr>
+    <tr>
+        <td>Apatinės šakės keitimas</td>
+        <td>15-35 €</td>
+    </tr>
+    <tr>
+        <td>Viršutinės šakės keitimas</td>
+        <td>15-35 €</td>
+    </tr>
+    <tr>
+        <td>Priekinio rato guolio keitimas</td>
+        <td>30-60 €</td>
+    </tr>
+    <tr>
+        <td>Rato guolio reguliavimas</td>
+        <td>nuo 6 €</td>
+    </tr>
+    <tr>
+        <td>Pusašio pakabinamo guolio keitimas</td>
+        <td>23-70 €</td>
+    </tr>
+    <tr>
+        <td>Vairo kolonėlės nuėmimas/pastatymas</td>
+        <td>40-140 €</td>
+    </tr>
+    <tr>
+        <td>Vairo kolonėlės remontas (nuimtai kolonelėi)</td>
+        <td>55-300 €</td>
+    </tr>
+    <tr>
+        <td>Vairo kolonėlės gumų keitimas</td>
+        <td>25-30 €</td>
+    </tr>
+    <tr>
+        <td>Priekinio amortizatoriaus keitimas</td>
+        <td>25-40 €</td>
+    </tr>
+    <tr>
+        <td>Galinio amortizatoriaus keitimas</td>
+        <td>15-40 €</td>
+    </tr>
+    <tr>
+        <td>Vairo traukės antgalio keitimas</td>
+        <td>15-20 €</td>
+    </tr>
+    <tr>
+        <td>Granatos keitimas</td>
+        <td>30-50 €</td>
+    </tr>
+    <tr>
+        <td>Granatos apsaugos keitimas</td>
+        <td>30-50 €</td>
+    </tr>
+    <tr>
+        <td>Stabilizatoriaus įvorės keitimas</td>
+        <td>4-20 €</td>
+    </tr>
+    <tr>
+        <td>Stabilizatoriaus traukės keitimas</td>
+        <td>10-15 €</td>
+    </tr>
+    <tr>
+        <td>Galinio tilto pusašio keitimas</td>
+        <td>23-60 €</td>
+    </tr>
+    <tr>
+        <td>Galinės reaktyvinės traukės keitimas</td>
+        <td>17-45 €</td>
+    </tr>
+    <tr>
+        <td>Spyruoklės keitimas</td>
+        <td>15-35 €</td>
+    </tr>
+    <tr>
+        <td>Vairo stiprintuvo skysčio keitimas</td>
+        <td>nuo 9 €</td>
+    </tr>
+    <tr>
+        <td>Vairo traukės keitimas</td>
+        <td>nuo 15 €</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><strong>Stabdžių remontas</strong></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Stabdžių sistemos tikrinimas / profilaktika</td>
+        <td>nuo 10 €</td>
+    </tr>
+    <tr>
+        <td>Diskinių stabdžių kaladėlių keitimas</td>
+        <td>20-30 €</td>
+    </tr>
+    <tr>
+        <td>Būgninių stabdžių kaladėlių keitimas</td>
+        <td>25-40 €</td>
+    </tr>
+    <tr>
+        <td>Rankinio stabdžio kaladėlių keitimas</td>
+        <td>25-40€</td>
+    </tr>
+    <tr>
+        <td>Stabdžių disko pakeitimas 1 vnt.</td>
+        <td>15-20 €</td>
+    </tr>
+    <tr>
+        <td>Stabdžių cilindriuko keitimas</td>
+        <td>nuo 9 €</td>
+    </tr>
+    <tr>
+        <td>Stabdžių žarnelės keitimas</td>
+        <td>nuo 9 €</td>
+    </tr>
+    <tr>
+        <td>Stabdžių skysčio keitimas su nuorinimu</td>
+        <td>12-20 €</td>
+    </tr>
+    <tr>
+        <td>Rankinio lyno keitimas</td>
+        <td>12-40 €</td>
+    </tr>
+    <tr>
+        <td>Rankinio stabdžio reguliavimas</td>
+        <td>6-15 €</td>
+    </tr>
+    <tr>
+        <td>Stabdžių nuorinimas (vienas ratas)</td>
+        <td>2-5 €</td>
+    </tr>
+    <tr>
+        <td>Pagrindinio stabdžių cilindro keitimas</td>
+        <td>nuo 23 €</td>
+    </tr>
+    <tr>
+        <td>Suporto nuėmimas/pastatymas</td>
+        <td>nuo 15 €</td>
+    </tr>
+    <tr>
+        <td>Suporto remontas</td>
+        <td>15-60 €</td>
+    </tr>
+    <tr>
+        <td>Suporto kreipiančiųjų profilaktika</td>
+        <td>nuo 6 €</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><strong>Duslintuvas</strong></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Suvirinimo darbai (1 val.)</td>
+        <td>nuo 30 €</td>
+    </tr>
+    <tr>
+        <td>Galinio bakelio keitimas</td>
+        <td>15-23 €</td>
+    </tr>
+    <tr>
+        <td>Vidurinės dalies keitimas</td>
+        <td>20-35 €</td>
+    </tr>
+    <tr>
+        <td>Gofros keitimas</td>
+        <td>nuo 20 €</td>
+    </tr>
+    <tr>
+        <td>Rezonatoriaus bakelio įpjovimas vietoj katalizatoriaus</td>
+        <td>nuo 23 €</td>
+    </tr>
+    <tr>
+        <td>Kolektoriaus tarpinės keitimas</td>
+        <td>35-150 €</td>
+    </tr>
+    <tr>
+        <td colspan="2"></td>
+    </tr>
+    <tr>
+        <td><strong>Sankaba</strong></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Pavarų dėžės nuėmimas / pastatymas</td>
+        <td>nuo 100 €</td>
+    </tr>
+    <tr>
+        <td>Sankabos keitimas</td>
+        <td>nuo 100 €</td>
+    </tr>
+    <tr>
+        <td>Sankabos reguliavimas</td>
+        <td>nuo 9-15 €</td>
+    </tr>
+    <tr>
+        <td>Sankabos lyno keitimas</td>
+        <td>9-40 €</td>
+    </tr>
+    <tr>
+        <td>Darbinio / pagrindinio cilindriuko keitimas</td>
+        <td>17-140€</td>
+    </tr>
+    <tr>
+        <td colspan="2"></td>
+    </tr>
+    <tr>
+        <td><strong>Kardaninis velenas</strong></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Kardaninio veleno nuėmimas / pastatymas</td>
+        <td>26-70 €</td>
+    </tr>
+    <tr>
+        <td>Pakabinamo guolio keitimas</td>
+        <td>26-50 €</td>
+    </tr>
+    <tr>
+        <td>Pakabinamo guolio apkabos keitimas</td>
+        <td>nuo 12 €</td>
+    </tr>
+    <tr>
+        <td>Kryžmės keitimas</td>
+        <td>17-80 €</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><strong>Autoelektriko paslaugos</strong></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Elektros instaliacijos remontas, ( 1 val.)</td>
+        <td>nuo 25 €</td>
+    </tr>
+    <tr>
+        <td>Generatoriaus nuėmimas / pastatymas</td>
+        <td>20-70€</td>
+    </tr>
+    <tr>
+        <td>Generatoriaus išardymas / surinkimas</td>
+        <td>nuo 9 €</td>
+    </tr>
+    <tr>
+        <td>Generatoriaus remontas</td>
+        <td>nuo 20 €</td>
+    </tr>
+    <tr>
+        <td>Starterio nuėmimas / pastatymas</td>
+        <td>9-70 €</td>
+    </tr>
+    <tr>
+        <td>Starterio išardymas / surinkimas</td>
+        <td>nuo 9 €</td>
+    </tr>
+    <tr>
+        <td>Starterio remontas</td>
+        <td>nuo 20 €</td>
+    </tr>
+    <tr>
+        <td>Starterio pritraukimo rėlės keitimas</td>
+        <td>nuo 15 €</td>
+    </tr>
+    <tr>
+        <td>Šviesų reguliavimas</td>
+        <td>nuo 6 €</td>
+    </tr>
+    <tr>
+        <td>Lemputės keitimas</td>
+        <td>2-35 €</td>
+    </tr>
+    <tr>
+        <td>Žibinto keitimas</td>
+        <td>nuo 12 €</td>
+    </tr>
+    <tr>
+        <td>Posūkio žibinto keitimas</td>
+        <td>nuo 7 €</td>
+    </tr>
+    <tr>
+        <td>Numerio apšvietimo tvarkymas</td>
+        <td>4-12 €</td>
+    </tr>
+    <tr>
+        <td>Kaitinimo žvakės tikrinimas / keitimas</td>
+        <td>nuo 9 €</td>
+    </tr>
+    <tr>
+        <td>Saugiklio keitimas</td>
+        <td>nuo 2 €</td>
+    </tr>
+    <tr>
+        <td>Degimo spynelės remontas</td>
+        <td>15-20 €</td>
+    </tr>
+    <tr>
+        <td>Rėlės keitimas</td>
+        <td>2-17 €</td>
+    </tr>
+    <tr>
+        <td>Langų apipūtimo ventiliatoriaus nuėmimas / pastatymas</td>
+        <td>12-140 €</td>
+    </tr>
+    <tr>
+        <td>Durų stiklo pakėlėjo nuėmimas / pastatymas</td>
+        <td>nuo 23 €</td>
+    </tr>
+    <tr>
+        <td>Durų stiklo pakėlėjo remontas</td>
+        <td>15-49 €</td>
+    </tr>
+    <tr>
+        <td>Radiatoriaus ventiliatoriaus nuėmimas / pastatymas</td>
+        <td>nuo 20 €</td>
+    </tr>
+    <tr>
+        <td>Radiatoriaus ventiliatoriaus tvarkymas</td>
+        <td>nuo 15 €</td>
+    </tr>
+    <tr>
+        <td>Audio aparatūros pajungimas</td>
+        <td>nuo 12 €</td>
+    </tr>
+    <tr>
+        <td>Akumuliatoriaus keitimas</td>
+        <td>nuo 6 €</td>
+    </tr>
+    <tr>
+        <td>Akumuliatoriaus pakrovimas</td>
+        <td>nuo 6 €</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+    {% endblock %}
