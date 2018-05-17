@@ -32,25 +32,6 @@ class UserInfo
      */
     private $bornAt;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $country;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $city;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $address;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $description;
 
 
     /**
@@ -181,7 +162,7 @@ class UserInfo
         // TODO: Implement unserialize() method.
     }
 
-    public function getMember(): ?Member
+    public function getMember()
     {
         return $this->member;
     }
