@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Orders;
-use App\Form\Type\MemberTypeAdminEdit;
+use App\Form\Type\AddOrder;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
@@ -46,26 +46,4 @@ class MyOrdersController extends Controller
             'pagination' => $pagination
         ]);
     }
-/*
-    /**
-     * @Route("/edituser/{id}", name="user.edit")
-     * @ParamConverter("user", class="App\Entity\Member")
-     * @param Member $user
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    /*public function editUserAction(Request $request, Member $user){
-        $em = $this->getDoctrine()->getManager();
-
-        $form = $this->createForm(MemberTypeAdminEdit::class, $user);
-        $form->handleRequest($request);
-
-        if($form->isSubmitted() && $form->isValid()){
-            $em->persist($user);
-            $em->flush();
-        }
-        return $this->render('dashboard/editUser.html.twig', [
-            'user' => $user,
-            'form' => $form->createView()
-        ]);
-    }*/
 }
