@@ -20,8 +20,8 @@
                 <a class="py-2 d-none d-md-inline-block" href="{{ path('aboutus') }}">Apie mus</a>
                 <a class="py-2 d-none d-md-inline-block" href="{{ path('services') }}">Paslaugos</a>
                 <a class="py-2 d-none d-md-inline-block" href="{{ path('feedback') }}">Atsiliepimai</a>
-                <a class="py-2 d-none d-md-inline-block" href="/{{ path('contact') }}">Kontaktai</a>
-                <a class="py-2 d-none d-md-inline-block" href="/{{ path('prices') }}">Kainos</a>
+                <a class="py-2 d-none d-md-inline-block" href="{{ path('contact') }}">Kontaktai</a>
+                <a class="py-2 d-none d-md-inline-block" href="{{ path('prices') }}">Kainos</a>
                 {% if app.user %}
                     <div class="dropdown">
                         <button class="dropbtn">{{app.user.username }}</button>

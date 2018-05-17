@@ -31,7 +31,7 @@ class Orders
         return $this->id;
     }
 
-    public function getFkService(): ?int
+    public function getFkService()
     {
         return $this->fk_service;
     }
@@ -43,7 +43,7 @@ class Orders
         return $this;
     }
 
-    public function getFkOrder(): ?int
+    public function getFkOrder()
     {
         return $this->fk_order;
     }
