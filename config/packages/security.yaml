@@ -7,6 +7,7 @@ security:
           algorithm: bcrypt
         App\Entity\Member:
           algorithm: bcrypt
+
     providers:
         chain_provider:
             chain:

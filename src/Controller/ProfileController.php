@@ -69,7 +69,6 @@ class ProfileController extends Controller
         $userInfo = $this->getDoctrine()->getRepository('App:UserInfo')
             ->find($id);
 
-        //if($userInfo != null){
         return $this->render('profile/profileDetails.html.twig',
             array('userInfo' => $userInfo));
 

@@ -24,7 +24,6 @@ class RegistrationController extends Controller
         ]);
 
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
             $password = $this
                 ->get('security.password_encoder')
