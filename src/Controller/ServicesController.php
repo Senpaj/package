@@ -12,7 +12,7 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        return $this->render('services/index.html.twig', [
+        return $this->render('price/price.html.twig', [
             'controller_name' => 'ServicesController',
         ]);
     }

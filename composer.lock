@@ -439,7 +439,9 @@
                 "orm",
                 "persistence"
             ],
+
             "time": "2018-04-19 14:07:39"
+
         },
         {
             "name": "doctrine/doctrine-cache-bundle",
@@ -1209,6 +1211,7 @@
                 "paginator",
                 "symfony"
             ],
+
             "time": "2018-05-16 12:15:58"
         },
         {
@@ -2042,7 +2045,9 @@
                 "caching",
                 "psr6"
             ],
+
             "time": "2018-04-27 05:49:57"
+
         },
         {
             "name": "symfony/class-loader",
@@ -2230,7 +2235,9 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
+
             "time": "2018-04-30 01:22:56"
+
         },
         {
             "name": "symfony/debug",
@@ -2286,7 +2293,9 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
+
             "time": "2018-04-30 16:53:52"
+
         },
         {
             "name": "symfony/dependency-injection",
@@ -2357,6 +2366,7 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
+
             "time": "2018-04-29 14:04:08"
         },
         {
@@ -2436,7 +2446,9 @@
             ],
             "description": "Symfony Doctrine Bridge",
             "homepage": "https://symfony.com",
+
             "time": "2018-04-25 15:24:55"
+
         },
         {
             "name": "symfony/event-dispatcher",
@@ -2693,7 +2705,9 @@
                     "email": "fabien.potencier@gmail.com"
                 }
             ],
+
             "time": "2018-05-02 19:08:56"
+
         },
         {
             "name": "symfony/form",
@@ -2888,7 +2902,9 @@
             ],
             "description": "Symfony FrameworkBundle",
             "homepage": "https://symfony.com",
+
             "time": "2018-04-30 16:54:07"
+
         },
         {
             "name": "symfony/http-foundation",
@@ -2942,7 +2958,9 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
+
             "time": "2018-04-30 01:05:13"
+
         },
         {
             "name": "symfony/http-kernel",
@@ -3030,7 +3048,9 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
+
             "time": "2018-04-30 19:27:02"
+
         },
         {
             "name": "symfony/inflector",
@@ -3521,7 +3541,9 @@
                 "portable",
                 "shim"
             ],
+
             "time": "2018-04-26 10:06:28"
+
         },
         {
             "name": "symfony/polyfill-intl-icu",
@@ -3579,7 +3601,9 @@
                 "portable",
                 "shim"
             ],
+
             "time": "2018-04-25 14:53:50"
+
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -3638,7 +3662,9 @@
                 "portable",
                 "shim"
             ],
+
             "time": "2018-04-26 10:06:28"
+
         },
         {
             "name": "symfony/process",
@@ -3831,7 +3857,9 @@
                 "type",
                 "validator"
             ],
+
             "time": "2018-04-25 15:24:55"
+
         },
         {
             "name": "symfony/routing",
@@ -3909,7 +3937,9 @@
                 "uri",
                 "url"
             ],
+
             "time": "2018-04-12 09:01:03"
+
         },
         {
             "name": "symfony/security",
@@ -3988,7 +4018,9 @@
             ],
             "description": "Symfony Security Component",
             "homepage": "https://symfony.com",
+
             "time": "2018-04-30 01:22:56"
+
         },
         {
             "name": "symfony/security-bundle",
@@ -4312,7 +4344,9 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
+
             "time": "2018-04-30 01:22:56"
+
         },
         {
             "name": "symfony/twig-bridge",
@@ -4402,7 +4436,9 @@
             ],
             "description": "Symfony Twig Bridge",
             "homepage": "https://symfony.com",
+
             "time": "2018-04-30 16:54:07"
+
         },
         {
             "name": "symfony/twig-bundle",
@@ -4475,7 +4511,9 @@
             ],
             "description": "Symfony TwigBundle",
             "homepage": "https://symfony.com",
+
             "time": "2018-04-19 08:26:28"
+
         },
         {
             "name": "symfony/validator",
@@ -4716,7 +4754,9 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
+
             "time": "2018-04-08 08:21:29"
+
         },
         {
             "name": "twig/twig",
@@ -4939,7 +4979,9 @@
                 "events",
                 "zf2"
             ],
+
             "time": "2018-04-25 15:33:34"
+
         }
     ],
     "packages-dev": [
@@ -5425,7 +5467,9 @@
                 "scaffold",
                 "scaffolding"
             ],
+
             "time": "2018-05-17 19:26:29"
+
         },
         {
             "name": "symfony/phpunit-bridge",
@@ -5491,7 +5535,9 @@
             ],
             "description": "Symfony PHPUnit Bridge",
             "homepage": "https://symfony.com",
+
             "time": "2018-04-30 15:36:51"
+
         },
         {
             "name": "symfony/profiler-pack",
@@ -5637,7 +5683,9 @@
                 "debug",
                 "dump"
             ],
+
             "time": "2018-04-26 12:42:15"
+
         },
         {
             "name": "symfony/web-profiler-bundle",
@@ -5704,7 +5752,9 @@
             ],
             "description": "Symfony WebProfilerBundle",
             "homepage": "https://symfony.com",
+
             "time": "2018-04-30 16:54:07"
+
         },
         {
             "name": "symfony/web-server-bundle",
