@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello!{% endblock %}
+{% block title %}Uzsakymai{% endblock %}
 
 {% block body %}
     <div class="container">
@@ -45,7 +45,7 @@
                         {% if (is_granted('ROLE_ADMIN')) or (is_granted('ROLE_MECHANIC')) %}
                         <td>
                             {#{{ path('user.edit', {id: user.id}) }}#}
-                            <a href="">
+                            <a href="/edit/order/{{ order.id }}">
                                 <button type="button" class="btn btn-primary">Redaguoti</button>
                             </a>
                         </td>
@@ -61,7 +61,7 @@
             {{ knp_pagination_render(pagination) }}
         </div>
 
-        <a href="">
+        <a href="/add/order">
             <button type="button" class="btn btn-default btn-md">Naujas uzsakymas</button>
         </a>
     </div>
