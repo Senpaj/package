@@ -16,7 +16,7 @@ class RegistrationController extends Controller
      * @return \Symfony\Component\HttpFoundation\Response
      * @throws \LogicException
      */
-    public function registerAction(Request $request)
+    public function registerAction(Request $request, \Swift_Mailer $mailer)
     {
         $member = new Member();
 
@@ -51,11 +51,11 @@ class RegistrationController extends Controller
             $this->get('security.token_storage')->setToken($token);
             $this->get('session')->set('_security_main', serialize($token));
 
-            $this->addFlash('succes', 'You are now successfully registered!');
+            $this->addFlash('success', 'You are now successfully registered!');
 
             $this->redirectToRoute('homepage');
 
-            $message = (new \Swift_Message('hello mail'))
+            $message = (new \Swift_Message('Skiperis jus sveikina!'))
                 ->setFrom('skiperispingvinauskas@gmail.com')
                 ->setTo($member->getEmail())
                 ->setBody(
@@ -65,12 +65,6 @@ class RegistrationController extends Controller
                     ),
                     'text/html'
                 );
-
-            $transport = (new \Swift_SmtpTransport('smtp.gmail.com', 465, 'ssl'))
-                ->setUsername('skiperispingvinauskas@gmail.com')
-                ->setPassword('skiperis11');
-
-            $mailer = new \Swift_Mailer($transport);
 
             $mailer->send($message);
         }

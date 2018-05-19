@@ -59,6 +59,11 @@ class Member implements UserInterface, \Serializable
     private $roles = [];
 
     /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $recovery_hash;
+
+    /**
      * Get id
      *
      * @return int
@@ -211,6 +216,18 @@ class Member implements UserInterface, \Serializable
     public function setUserInfo(UserInfo $userInfo): self
     {
         $this->userInfo = $userInfo;
+
+        return $this;
+    }
+
+    public function getRecoveryHash(): ?string
+    {
+        return $this->recovery_hash;
+    }
+
+    public function setRecoveryHash(?string $recovery_hash): self
+    {
+        $this->recovery_hash = $recovery_hash;
 
         return $this;
     }
