@@ -50,5 +50,4 @@ security:
           - { path: ^/(login|register)$, role: IS_AUTHENTICATED_ANONYMOUSLY }
           - { path: ^/dashboard, role: ROLE_ADMIN }
           - { path: ^/profile/create, role: ROLE_USER }
-
-         - { path: ^/myorders, role: roles: [ROLE_ADMIN, ROLE_USER] }
+          - { path: ^/myorders, role: [ROLE_ADMIN, ROLE_USER] }
