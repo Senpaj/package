@@ -13,6 +13,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\FormTypeInterface;
+use App\Entity\CustomerOrder;
 
 
 class OrderFormType extends AbstractType
@@ -23,7 +24,7 @@ class OrderFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('make', ChoiceType::class, array(
+            ->add('auto_make', ChoiceType::class, array(
                 'choices'  => array(
                     'Acura' => "Acura",
                     'Aixam' => "Aixam",
@@ -87,8 +88,7 @@ class OrderFormType extends AbstractType
                     'Toyota' => "Toyota",
                     'Volkswagen' => "Volkswagen",
                     'Volvo' => "Volvo",
-
-                ),
+                    ),
             ))
             ->add('model', TextType::class)
             ->add('description', TextType::class)
