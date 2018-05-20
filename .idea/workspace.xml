@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="823a89db-e17f-4ff3-a80a-dbbc1957aa03" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ChangePasswordController.php" afterPath="$PROJECT_DIR$/src/Controller/ChangePasswordController.php" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" />
-      <change beforePath="$PROJECT_DIR$/templates/price/price.html.twig" afterPath="$PROJECT_DIR$/templates/price/price.html.twig" />
       <change beforePath="$PROJECT_DIR$/tests/Controller/ProfileControllerTest.php" afterPath="$PROJECT_DIR$/tests/Controller/ProfileControllerTest.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -98,11 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProfileControllerTest.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ProfileControllerTest.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/Controller/ProfileControllerTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="55" column="13" lean-forward="false" selection-start-line="55" selection-start-column="13" selection-end-line="55" selection-end-column="13" />
+            <state relative-caret-position="198">
+              <caret line="91" column="20" lean-forward="true" selection-start-line="91" selection-start-column="20" selection-end-line="91" selection-end-column="20" />
               <folding>
                 <element signature="e#86#138#0#PHP" expanded="true" />
               </folding>
@@ -130,7 +125,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="271">
@@ -210,9 +205,9 @@
         <option value="$PROJECT_DIR$/src/Controller/RegistrationController.php" />
         <option value="$PROJECT_DIR$/src/Controller/ChangePasswordController.php" />
         <option value="$PROJECT_DIR$/config/config_test.yaml" />
-        <option value="$PROJECT_DIR$/tests/Controller/ProfileControllerTest.php" />
         <option value="$PROJECT_DIR$/templates/price/price.html.twig" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/tests/Controller/ProfileControllerTest.php" />
       </list>
     </option>
   </component>
@@ -491,7 +486,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67461000" />
+    <option name="totallyTimeSpent" value="67556000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="414" y="227" width="1313" height="780" extended-state="6" />
@@ -933,16 +928,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Controller/ProfileControllerTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="55" column="13" lean-forward="false" selection-start-line="55" selection-start-column="13" selection-end-line="55" selection-end-column="13" />
-          <folding>
-            <element signature="e#86#138#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/services/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2">
@@ -964,6 +949,16 @@
         <state relative-caret-position="271">
           <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Controller/ProfileControllerTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="91" column="20" lean-forward="true" selection-start-line="91" selection-start-column="20" selection-end-line="91" selection-end-column="20" />
+          <folding>
+            <element signature="e#86#138#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
