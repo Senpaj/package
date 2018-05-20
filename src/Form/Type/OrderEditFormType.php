@@ -24,18 +24,16 @@ class OrderEditFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            //->add('auto_make', TextType::class)
-            //->add('model', TextType::class)
-            ->add('description', TextType::class)
-            ->add('date', DateType::class)
-            ->add('status', ChoiceType::class, array(
+            ->add('description', TextType::class, array('label' => 'Aprašymas'))
+            ->add('date', DateType::class, array('label' => 'Data'))
+            ->add('status', ChoiceType::class, array( 'label' => 'Būsena',
                 'choices'  => array(
                     'Vykdomas' => "1",
-                    'Uzbaigtas' => "2",
+                    'Baigtas' => "2",
                     'Nutrauktas' => "0",
                 ),
             ))
-            ->add('submit', SubmitType::class)
+            ->add('submit', SubmitType::class, array('label' => 'Atnaujinti'))
             ->getForm();
 
     }

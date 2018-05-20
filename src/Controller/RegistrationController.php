@@ -50,11 +50,11 @@ class RegistrationController extends Controller
             $this->get('security.token_storage')->setToken($token);
             $this->get('session')->set('_security_main', serialize($token));
 
-            $this->addFlash('success', 'You are now successfully registered!');
+            $this->addFlash('success', 'Sveikiname prisiregistravus!');
 
             $this->redirectToRoute('homepage');
 
-            $message = (new \Swift_Message('Skiperis jus sveikina!'))
+            $message = (new \Swift_Message('Škiperis jus sveikina!'))
                 ->setFrom('skiperispingvinauskas@gmail.com')
                 ->setTo($member->getEmail())
                 ->setBody(

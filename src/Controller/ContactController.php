@@ -52,7 +52,7 @@ class ContactController extends Controller
             $em->persist($contact);
             $em->flush();
 
-            $message = (new \Swift_Message('Skiperis jus sveikina!'))
+            $message = (new \Swift_Message('Škiperis jus sveikina!'))
                 ->setSubject($subject)
                 ->setFrom('skiperispingvinauskas@gmail.com')
                 ->setTo($email)
@@ -61,7 +61,7 @@ class ContactController extends Controller
             $mailer->send($message);
 
 
-            $this->addFlash('success', 'Message sent');
+            $this->addFlash('success', 'Žinutė išsiųsta');
         }
         return $this->render('contact/index.html.twig',
             array(

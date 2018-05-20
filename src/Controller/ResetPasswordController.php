@@ -56,9 +56,9 @@ class ResetPasswordController extends Controller
 
                 $mailer->send($message);
 
-                $this->addFlash('success', 'Toliau sekite instrukcijas, kurias jums atsiunteme i elektronini pasta.');
+                $this->addFlash('success', 'Toliau sekite instrukcijas, kurias jums atsiuntėme į elektroninį paštą.');
             } else {
-                $this->addFlash('failure', 'Vartotojas su tokiu elektroniniu pastu neegzistuoja. Bandykite dar karta.');
+                $this->addFlash('error', 'Vartotojas su tokiu elektroniniu paštu neegzistuoja. Bandykite dar kartą.');
 
                 $this->redirectToRoute('resetPassword');
             }

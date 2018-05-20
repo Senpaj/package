@@ -22,11 +22,11 @@ class ContactFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', TextType::class, array('label' => 'Name', 'attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
-            ->add('email', TextType::class, array('label' => 'E-mail', 'attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
-            ->add('subject', TextType::class, array('label' => 'Subject', 'attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
-            ->add('message', TextareaType::class, array('label' => 'Message', 'attr' => array('class' => 'form-control')))
-            ->add('Save', SubmitType::class, array('label' => 'Submit', 'attr' => array('class' => 'btn btn-primary', 'style' => 'margin-top:15px')));
+            ->add('name', TextType::class, array('label' => 'Vardas', 'attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
+            ->add('email', TextType::class, array('label' => 'El.Paštas', 'attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
+            ->add('subject', TextType::class, array('label' => 'Tema', 'attr' => array('class' => 'form-control', 'style' => 'margin-bottom:15px')))
+            ->add('message', TextareaType::class, array('label' => 'Pranešimas', 'attr' => array('class' => 'form-control')))
+            ->add('Save', SubmitType::class, array('label' => 'Pateikti', 'attr' => array('class' => 'btn btn-primary', 'style' => 'margin-top:15px')));
 
     }
 

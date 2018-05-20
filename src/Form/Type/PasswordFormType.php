@@ -19,13 +19,13 @@ class PasswordFormType extends AbstractType
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('plainPasswordOld', PasswordType::class);
+        $builder->add('plainPasswordOld', PasswordType::class, array('label' => 'Senas slaptažodis'));
         $builder->add('plainPasswordNew', RepeatedType::class, array(
             'type' => PasswordType::class,
-            'invalid_message' => 'The password fields must match.',
+            'invalid_message' => 'Slaptažodžiai turi sutapti.',
             'required' => true,
-            'first_options' => array('label' => 'Password'),
-            'second_options' => array('label' => 'Repeat Password'),
+            'first_options' => array('label' => 'Naujas slaptažodis'),
+            'second_options' => array('label' => 'Pakartokite slaptažodį'),
         ));
         $builder->add('Submit', SubmitType::class);
     }

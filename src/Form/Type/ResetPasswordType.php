@@ -21,15 +21,13 @@ class ResetPasswordType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('plainPassword', RepeatedType::class,[
+            ->add('plainPassword', RepeatedType::class, array(
                 'type' => PasswordType::class,
-                'first_options' => [
-                    'label' => 'Iveskite slaptazodi'
-                ],
-                'second_options' => [
-                    'label' => 'Pakartokite slaptazodi'
-                ]
-            ])
+                'invalid_message' => 'Slaptažodžiai turi sutapti.',
+                'required' => true,
+                'first_options' => array('label' => 'Įveskite slaptažodį'),
+                'second_options' => array('label' => 'Pakartokite slaptažodį'),
+            ))
             ->add('Pakeisti', SubmitType::class);
     }
 }

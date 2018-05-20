@@ -48,7 +48,7 @@ class PasswordResetController extends Controller
                 $em->persist($member);
                 $em->flush();
 
-                $this->addFlash('success', 'Slaptazodis sekmingai pakeistas! Galite prisijungti.');
+                $this->addFlash('success', 'Slaptažodis sėkmingai pakeistas! Galite prisijungti.');
 
                 return $this->redirectToRoute('login');
             }
