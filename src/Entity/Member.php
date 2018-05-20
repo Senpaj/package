@@ -187,7 +187,7 @@ class Member implements UserInterface, \Serializable
     }
 
     /**
-     * @param mixed $plainPasswordOld
+     * @param mixed $plainPasswordNew
      */
     public function setPlainPasswordNew($plainPasswordNew)
     {

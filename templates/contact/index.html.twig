@@ -1,14 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Kontaktai{% endblock %}
-
 {% block body %}
-    <h2>Snail mail</h2>
-    <br/>
-    <ul>
-        <li>UAB Skiperis</li>
-        <li>Studentų g. 50, Kaunas</li>
-        <li>LT-45513</li>
-        <li>+37065525258</li>
-    </ul>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <h2 class=page-header>Contact us</h2>
+
+            {{form_start(form)}}
+            {{form_widget(form)}}
+            {{form_end(form)}}
+
+        </div>
+    </div>
+</div>
+
 {% endblock %}
+
