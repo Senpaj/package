@@ -23,7 +23,7 @@ class ContactController extends Controller
     /**
      * @Route("/contact", name="contact")
      */
-    public function createAction(Request $request)
+    public function createAction(Request $request, \Swift_Mailer $mailer)
     {
         $contact = new Contact;
         # Add form fields
@@ -52,15 +52,13 @@ class ContactController extends Controller
             $em->persist($contact);
             $em->flush();
 
-            $message = \Swift_Message::newInstance()
+            $message = (new \Swift_Message('Skiperis jus sveikina!'))
                 ->setSubject($subject)
                 ->setFrom('skiperispingvinauskas@gmail.com')
                 ->setTo($email)
                 ->setBody($this->renderView('email/contactMessage.html.twig', array('name' => $name)), 'text/html');
 
-
-
-            $this->get('mailer')->send($message);
+            $mailer->send($message);
 
         }
         return $this->render('contact/index.html.twig',
