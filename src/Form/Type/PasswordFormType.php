@@ -19,7 +19,7 @@ class PasswordFormType extends AbstractType
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('plainPasswordOld', PasswordType::class);
+        $builder->add('plainPasswordOld', PasswordType::class, array('label' => 'Current password'));
         $builder->add('plainPasswordNew', RepeatedType::class, array(
             'type' => PasswordType::class,
             'invalid_message' => 'The password fields must match.',
@@ -27,7 +27,9 @@ class PasswordFormType extends AbstractType
             'first_options' => array('label' => 'Password'),
             'second_options' => array('label' => 'Repeat Password'),
         ));
-        $builder->add('Submit', SubmitType::class);
+        $builder->add('Submit', SubmitType::class, array('label' => 'Submit', 'attr' => array('class' => 'btn btn-primary', 'style' => 'margin-top:15px')));
+
+
     }
 
 
