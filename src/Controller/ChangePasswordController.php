@@ -44,7 +44,6 @@ class ChangePasswordController extends Controller
                     $user,
                     $form->get('plainPasswordNew')->getData());
 
-          
             $encoderService = $this->container->get('security.password_encoder');
             if ($encoderService->isPasswordValid($user, $passwordOld, $user->getSalt())) {
                 $user->setPassword($passwordNew);
