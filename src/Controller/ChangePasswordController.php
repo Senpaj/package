@@ -24,7 +24,6 @@ class ChangePasswordController extends Controller
      */
     public function changePasswordAction(Request $request)
     {
-        $error = "";
         $user = $this->getUser();
         $form = $this->createForm(PasswordFormType::class, $user);
 
@@ -32,11 +31,6 @@ class ChangePasswordController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $passwordOld = $this
-                ->get('security.password_encoder')
-                ->encodePassword(
-                    $user,
-                    $form->get('plainPasswordOld')->getData());
 
             $passwordNew = $this
                 ->get('security.password_encoder')
@@ -44,22 +38,13 @@ class ChangePasswordController extends Controller
                     $user,
                     $form->get('plainPasswordNew')->getData());
 
-            $encoderService = $this->container->get('security.password_encoder');
-            if ($encoderService->isPasswordValid($user, $passwordOld, $user->getSalt())) {
-                $user->setPassword($passwordNew);
+            $user->setPassword($passwordNew);
 
-                $em->persist($user);
-                $em->flush();
-                return $this->render('base.html.twig', array(
-                    'success' => "Slaptažodis pakeistas."
-                ));
-
-            } else {
-                $this->addFlash(
-                    'error',
-                    'Senas slaptažodis neteisingas'
-                );
-            }
+            $em->persist($user);
+            $em->flush();
+            return $this->redirectToRoute('homepage', array(
+                'success' => "Slaptažodis pakeistas."
+            ));
         }
         return $this->render('changePassword/changePassword.html.twig', [
             'changePassword_form' => $form->createView()]);

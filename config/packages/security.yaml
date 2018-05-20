@@ -49,5 +49,10 @@ security:
     access_control:
           - { path: ^/(login|register)$, role: IS_AUTHENTICATED_ANONYMOUSLY }
           - { path: ^/dashboard, role: ROLE_ADMIN }
-          - { path: ^/profile/create, role: ROLE_USER }
+          - { path: ^/profile/create, role: [ROLE_ADMIN, ROLE_USER] }
+          - { path: ^/profile/edit, role: [ROLE_ADMIN, ROLE_USER] }
+          - { path: ^/changePassword, role: [ROLE_ADMIN, ROLE_USER] }
+          - { path: ^/passwordReset, role: [ROLE_ADMIN, ROLE_USER] }
           - { path: ^/myorders, role: [ROLE_ADMIN, ROLE_USER] }
+          - { path: ^/add/order, role: [ROLE_ADMIN, ROLE_USER] }
+
