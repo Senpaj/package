@@ -51,13 +51,13 @@ class ChangePasswordController extends Controller
                 $em->persist($user);
                 $em->flush();
                 return $this->render('base.html.twig', array(
-                    'success' => "Password was changed."
+                    'success' => "Slaptažodis pakeistas."
                 ));
 
             } else {
                 $this->addFlash(
                     'error',
-                    'Your old password is invalid'
+                    'Senas slaptažodis neteisingas'
                 );
             }
         }

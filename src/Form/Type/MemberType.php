@@ -21,18 +21,18 @@ class MemberType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('username', TextType::class)
-            ->add('email', EmailType::class)
+            ->add('username', TextType::class, array('label'=>'Vartotojo vardas'))
+            ->add('email', EmailType::class, array('label'=>'El. Paštas'))
             ->add('plainPassword', RepeatedType::class, [
                 'type' => PasswordType::class,
                 'first_options' => [
-                    'label' => 'Password'
+                    'label' => 'Slaptažodis'
                 ],
                 'second_options' => [
-                    'label' => 'Repeat Password'
+                    'label' => 'Pakartokite slaptažodį'
                 ]
             ])
-            ->add('register', SubmitType::class);
+            ->add('register', SubmitType::class, array('label'=>'Registruotis'));
     }
 
     /**

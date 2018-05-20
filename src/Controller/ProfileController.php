@@ -104,8 +104,8 @@ class ProfileController extends Controller
             $em->flush();
 
             $this->addFlash(
-                'notice',
-                'Profile Updated'
+                'success',
+                'Profilis atnaujintas'
             );
 
             return $this->redirectToRoute('profileDetails', array(

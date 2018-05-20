@@ -7,19 +7,19 @@
 
 {% block body %}
 
-    <a class="btn btn-default" href="/">Back to home</a>
+    <a class="btn btn-default" href="/">Pagrindinis puslapis</a>
     {% if app.user.userInfo.id is defined %}
-        <a class="btn btn-default" href="{{ path('profileEdit', {'id': app.user.userInfo.id}) }} ">Update profile</a>
+        <a class="btn btn-default" href="{{ path('profileEdit', {'id': app.user.userInfo.id}) }} ">Atnaujinti profilį</a>
     {% else %}
         <a href="{{ path('profileCreate') }}">Profilis</a>
     {% endif %}
 
     <hr>
 
-  <h2 class="page header">Profile</h2>
+    <h2 class="page header">Profile</h2>
     <ul class = list-group">
-      <li class="list-group-item"> first name: {{ userInfo.firstName }}</li>
-      <li class="list-group-item"> last name: {{ userInfo.lastName }}</li>
-      <li class="list-group-item"> born at: <strong>{{ userInfo.bornAt|date('F j, Y, g:i, a')}}</strong></li>
+        <li class="list-group-item"> Vardas: {{ userInfo.firstName }}</li>
+        <li class="list-group-item"> Pavardė: {{ userInfo.lastName }}</li>
+        <li class="list-group-item"> Gimimo data: <strong>{{ userInfo.bornAt|date('Y-g-j')}}</strong></li>
     </ul>
 {% endblock %}
