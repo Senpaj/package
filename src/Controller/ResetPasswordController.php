@@ -64,7 +64,7 @@ class ResetPasswordController extends Controller
             }
 
 
-
+    
         }
 
         return $this->render('reset_password/index.html.twig', array(
