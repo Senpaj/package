@@ -71,8 +71,6 @@ class AddOrderController extends Controller
         $customerOrder = $this->getDoctrine()->getRepository('App:CustomerOrder')->find($id);
 
         $form = $this->createForm(OrderEditFormType::class,$customerOrder);
-        //$customerOrder->setauto_make($customerOrder->getauto_make());
-        //$customerOrder->setauto_model($customerOrder->getauto_model());
         $customerOrder->setDescription($customerOrder->getDescription());
         $customerOrder->setStatus($customerOrder->getStatus());
         $status1 = $customerOrder->getStatus();
@@ -85,8 +83,6 @@ class AddOrderController extends Controller
 
             $customerOrder->setDate($form['date']->getData());
             $customerOrder->setDescription($form['description']->getData());
-            //$customerOrder->setauto_make($form['auto_make']->getData());
-            //$customerOrder->setauto_model($form['model']->getData());
             $customerOrder->setStatus($form['status']->getData());
 
 
@@ -103,7 +99,7 @@ class AddOrderController extends Controller
 
             $status2 = $customerOrder->getStatus();
             if($status1 != $status2 && $status2 == '2'){
-                $message = (new \Swift_Message('Jusu automobilis paruostas'))
+                $message = (new \Swift_Message('Jūsų automobilis paruoštas'))
                     ->setFrom('skiperispingvinauskas@gmail.com')
                     ->setTo($member->getEmail())
                     ->setBody(
@@ -117,7 +113,7 @@ class AddOrderController extends Controller
             }
 
             if($status1 != $status2 && $status2 == '0'){
-                $message = (new \Swift_Message('Jusu uzsakymas atsauktas'))
+                $message = (new \Swift_Message('Jūsų užsakymas atšauktas'))
                     ->setFrom('skiperispingvinauskas@gmail.com')
                     ->setTo($member->getEmail())
                     ->setBody(

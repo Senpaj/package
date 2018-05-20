@@ -24,10 +24,10 @@ class ProfileFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('firstName', TextType::class)
-            ->add('lastName', TextType::class)
-            ->add('bornAt', DateType::class)
-                ->add('submit', SubmitType::class)
+            ->add('firstName', TextType::class, array('label'=>'Vardas'))
+            ->add('lastName', TextType::class, array('label'=>'Pavardė'))
+            ->add('bornAt', DateType::class, array('label'=>'Gimimo data'))
+                ->add('submit', SubmitType::class, array('label'=>'Atnaujinti'))
             ->getForm();
 
     }

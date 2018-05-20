@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Uzsakymai{% endblock %}
+{% block title %}Užsakymai{% endblock %}
 
 {% block body %}
     <div class="container">
@@ -10,9 +10,9 @@
             <tr>
                 <th></th>
                 <th>#</th>
-                <th>Marke</th>
+                <th>Markė</th>
                 <th>Modelis</th>
-                <th>Aprasymas</th>
+                <th>Aprašymas</th>
                 <th></th>
                 <th></th>
             </tr>
@@ -34,7 +34,7 @@
                             {% endif %}
 
                             {% if (order.status == 0) %}
-                                <button type="button" class="btn btn-danger btn-sm">Atsauktas</button>
+                                <button type="button" class="btn btn-danger btn-sm">Atšauktas</button>
                             {% endif %}
 
                             {% if (order.status == 2) %}
@@ -62,7 +62,7 @@
         </div>
 
         <a href="/add/order">
-            <button type="button" class="btn btn-default btn-md">Naujas uzsakymas</button>
+            <button type="button" class="btn btn-default btn-md">Naujas užsakymas</button>
         </a>
     </div>
 

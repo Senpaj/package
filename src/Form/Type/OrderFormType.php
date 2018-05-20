@@ -25,6 +25,7 @@ class OrderFormType extends AbstractType
     {
         $builder
             ->add('auto_make', ChoiceType::class, array(
+
                 'choices'  => array(
                     'Acura' => "Acura",
                     'Aixam' => "Aixam",
@@ -88,12 +89,12 @@ class OrderFormType extends AbstractType
                     'Toyota' => "Toyota",
                     'Volkswagen' => "Volkswagen",
                     'Volvo' => "Volvo",
-                    ),
+                    ), 'label' => 'Automobilio markė'
             ))
-            ->add('model', TextType::class)
-            ->add('description', TextType::class)
-            ->add('date', DateType::class)
-            ->add('submit', SubmitType::class)
+            ->add('model', TextType::class, array('label' => 'Automobilio modelis'))
+            ->add('description', TextType::class, array('label' => 'Aprašymas'))
+            ->add('date', DateType::class, array('label' => 'Apsilankymo data'))
+            ->add('submit', SubmitType::class, array('label' => 'Užsiregistruoti'))
             ->getForm();
 
     }
