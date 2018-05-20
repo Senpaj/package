@@ -52,7 +52,6 @@ security:
           - { path: ^/profile/create, role: [ROLE_ADMIN, ROLE_USER] }
           - { path: ^/profile/edit, role: [ROLE_ADMIN, ROLE_USER] }
           - { path: ^/changePassword, role: [ROLE_ADMIN, ROLE_USER] }
-          - { path: ^/passwordReset, role: [ROLE_ADMIN, ROLE_USER] }
           - { path: ^/myorders, role: [ROLE_ADMIN, ROLE_USER] }
           - { path: ^/add/order, role: [ROLE_ADMIN, ROLE_USER] }
 
