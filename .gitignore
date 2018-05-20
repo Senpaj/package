@@ -19,8 +19,4 @@ yarn-error.log
 /.web-server-pid
 ###< symfony/web-server-bundle ###
 <<<<<<< HEAD
-/.idea
 .idea
-=======
-.idea
->>>>>>> 88f82deb51009d8847369930782aa7676db1342e
