@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Form\Type\OrderEditFormType;
+use App\Entity\Member;
 use App\Form\Type\OrderFormType;
 use App\Entity\UserInfo;
 use App\Entity\CustomerOrder;
@@ -65,7 +66,7 @@ class AddOrderController extends Controller
     /**
      * @Route("/edit/order/{id}", name="edit_order")
      */
-    public function EditOrder($id, Request $request)
+    public function EditOrder($id, Request $request, \Swift_Mailer $mailer)
     {
         $customerOrder = $this->getDoctrine()->getRepository('App:CustomerOrder')->find($id);
 
@@ -74,9 +75,11 @@ class AddOrderController extends Controller
         //$customerOrder->setauto_model($customerOrder->getauto_model());
         $customerOrder->setDescription($customerOrder->getDescription());
         $customerOrder->setStatus($customerOrder->getStatus());
-
+        $status1 = $customerOrder->getStatus();
 
         $form->handleRequest($request);
+
+
 
         if ($form->isSubmitted() && $form->isValid()) {
 
@@ -91,6 +94,41 @@ class AddOrderController extends Controller
             $em->persist($customerOrder);
             $em->flush();
 
+            $client = $customerOrder->getfk_client();
+            $repository = $this->getDoctrine()->getRepository('App:Member');
+
+            $member = $repository->findOneBy(['id' => $client]);
+
+            $email = $member->getEmail();
+
+            $status2 = $customerOrder->getStatus();
+            if($status1 != $status2 && $status2 == '2'){
+                $message = (new \Swift_Message('Jusu automobilis paruostas'))
+                    ->setFrom('skiperispingvinauskas@gmail.com')
+                    ->setTo($member->getEmail())
+                    ->setBody(
+                        $this->renderView(
+                            'email/orderFinished.html.twig'),
+                        'text/html'
+
+                    );
+
+                $mailer->send($message);
+            }
+
+            if($status1 != $status2 && $status2 == '0'){
+                $message = (new \Swift_Message('Jusu uzsakymas atsauktas'))
+                    ->setFrom('skiperispingvinauskas@gmail.com')
+                    ->setTo($member->getEmail())
+                    ->setBody(
+                        $this->renderView(
+                            'email/orderCanceled.html.twig'),
+                        'text/html'
+
+                    );
+
+                $mailer->send($message);
+            }
 
             return $this->redirectToRoute('myorders');
         }
