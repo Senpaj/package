@@ -60,6 +60,8 @@ class ContactController extends Controller
 
             $mailer->send($message);
 
+
+            $this->addFlash('success', 'Message sent');
         }
         return $this->render('contact/index.html.twig',
             array(
