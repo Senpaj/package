@@ -28,16 +28,11 @@ class ProfileControllerTest extends WebTestCase
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
 
-
     public function testShowAboutUs(){
         $crawler = $this->client->request('GET', '/aboutus');
         $this->assertSame(Response::HTTP_OK, $this->client->getResponse()->getStatusCode());
     }
 
-    public function testShowPrices(){
-        $crawler = $this->client->request('GET', '/prices');
-        $this->assertSame(Response::HTTP_OK, $this->client->getResponse()->getStatusCode());
-    }
 
     public function testShowServices(){
         $crawler = $this->client->request('GET', '/services');
@@ -60,7 +55,7 @@ class ProfileControllerTest extends WebTestCase
         $crawler = $this->client->request('GET', '/contact');
         $this->assertSame(Response::HTTP_OK, $this->client->getResponse()->getStatusCode());
 
-        $form = $crawler->selectButton('Submit')->form();
+        $form = $crawler->selectButton('Pateikti')->form();
         $crawler = $client->submit($form, array('contact_form[name]' => 'Fabien', 'contact_form[email]' => 'tomas@gmail.com',
             'contact_form[subject]' => 'anypass', 'contact_form[message]' => 'hello'));
 
@@ -72,20 +67,20 @@ class ProfileControllerTest extends WebTestCase
         $crawler = $this->client->request('GET', '/register');
         $this->assertSame(Response::HTTP_OK, $this->client->getResponse()->getStatusCode());
 
-        $form = $crawler->selectButton('Register')->form();
+        $form = $crawler->selectButton('Registruotis')->form();
         $crawler = $client->submit($form, array('appbundle_member[username]' => 'Fabien', 'appbundle_member[email]' => 'tomas@gmail.com',
             'appbundle_member[plainPassword][first]' => 'anypass', 'appbundle_member[plainPassword][second]' => 'anypass'));
         $this->assertSame(Response::HTTP_OK, $this->client->getResponse()->getStatusCode());
 
     }
 
-    public function testCreateProfile(){
+    public function testLogIn(){
         $client = static::createClient();
 
         $crawler = $this->client->request('GET', '/login');
         $this->assertSame(Response::HTTP_OK, $this->client->getResponse()->getStatusCode());
 
-        $form = $crawler->selectButton('Sign in')->form();
+        $form = $crawler->selectButton('Prisijungti')->form();
         $crawler = $client->submit($form, array('_username' => 'Fabien',
             '_password' => 'anypass'));
 
