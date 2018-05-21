@@ -52,7 +52,7 @@ class ProfileController extends Controller
                 'id' => $userInfo->getId()));
         }
 
-        return $this->render('profile/profileCreate.html.twig',
+        return $this->render('profile/create.html.twig',
             array(
                 'userInfo' => $userInfo,
                 'form' => $form->createView()));
@@ -69,8 +69,7 @@ class ProfileController extends Controller
         $userInfo = $this->getDoctrine()->getRepository('App:UserInfo')
             ->find($id);
 
-        //if($userInfo != null){
-        return $this->render('profile/profileDetails.html.twig',
+        return $this->render('profile/details.html.twig',
             array('userInfo' => $userInfo));
 
 //
@@ -105,15 +104,15 @@ class ProfileController extends Controller
             $em->flush();
 
             $this->addFlash(
-                'notice',
-                'Profile Updated'
+                'success',
+                'Profilis atnaujintas'
             );
 
             return $this->redirectToRoute('profileDetails', array(
                 'id' => $userInfo->getId()));
         }
 
-        return $this->render('profile/profileEdit.html.twig',
+        return $this->render('profile/edit.html.twig',
             array(
                 'userInfo' => $userInfo,
                 'form' => $form->createView()));

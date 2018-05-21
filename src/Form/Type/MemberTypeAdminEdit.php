@@ -21,8 +21,8 @@ class MemberTypeAdminEdit extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('username', TextType::class)
-            ->add('email', EmailType::class)
+            ->add('username', TextType::class, array('label' => 'Vartotojo vardas'))
+            ->add('email', EmailType::class, array('label' => 'El.Paštas'))
             ->add('roles',ChoiceType::class, [
                 'multiple' => true,
                 'expanded' => true,
@@ -30,28 +30,7 @@ class MemberTypeAdminEdit extends AbstractType
                     'Admin' => 'ROLE_ADMIN',
                     'User' => 'ROLE_USER',
                     'Mechanic' => 'ROLE_MECHANIC'
-                ]])
+                ] ] )
             ->add('Atnaujinti', SubmitType::class);
     }
-
-//    /**
-//     * {@inheritdoc}
-//     * @throws \Symfony\Component\OptionsResolver\Exception\AccessEception
-//     */
-//    public function configureOptions(OptionsResolver $resolver)
-//    {
-//        $resolver->setDefaults([
-//            'data_class' => Member::class
-//        ]);
-//    }
-//
-//    /**
-//     * {@inheritdoc}
-//     */
-//    public function getBlockPrefix()
-//    {
-//        return 'appbundle_member';
-//    }
-
-
 }

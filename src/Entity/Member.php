@@ -45,6 +45,9 @@ class Member implements UserInterface, \Serializable
 
     private $plainPassword;
 
+    private $plainPasswordOld;
+
+    private $plainPasswordNew;
    /**
      * One User has One UserInfo.
     * @ORM\OneToOne(targetEntity="UserInfo", inversedBy="member", cascade = "remove")
@@ -57,6 +60,11 @@ class Member implements UserInterface, \Serializable
      * @ORM\Column(type="json_array")
      */
     private $roles = [];
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $recovery_hash;
 
     /**
      * Get id
@@ -157,12 +165,43 @@ class Member implements UserInterface, \Serializable
     }
 
 
+    /**
+     * @return mixed
+     */
+    public function getPlainPasswordOld()
+    {
+        return $this->plainPasswordOld;
+    }
+
+    /**
+     * @param mixed $plainPasswordOld
+     */
+    public function setPlainPasswordOld($plainPasswordOld)
+    {
+        $this->plainPasswordOld = $plainPasswordOld;
+    }
+
+    public function getPlainPasswordNew()
+    {
+        return $this->plainPasswordNew;
+    }
+
+    /**
+     * @param mixed $plainPasswordNew
+     */
+    public function setPlainPasswordNew($plainPasswordNew)
+    {
+        $this->plainPasswordNew = $plainPasswordNew;
+    }
+
+
     public function serialize()
     {
         return serialize([
             $this->id,
             $this->username,
             $this->password,
+
         ]);
         // TODO: Implement serialize() method.
     }
@@ -193,7 +232,7 @@ class Member implements UserInterface, \Serializable
     }
     public function getSalt()
     {
-
+            return null;
         // TODO: Implement getSalt() method.
     }
 
@@ -211,7 +250,20 @@ class Member implements UserInterface, \Serializable
     public function setUserInfo(UserInfo $userInfo): self
     {
         $this->userInfo = $userInfo;
+        return $this;
+    }
+
+
+    public function getRecoveryHash(): ?string
+    {
+        return $this->recovery_hash;
+    }
+
+    public function setRecoveryHash(?string $recovery_hash): self
+    {
+        $this->recovery_hash = $recovery_hash;
 
         return $this;
     }
+
 }

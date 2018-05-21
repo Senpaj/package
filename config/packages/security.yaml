@@ -7,6 +7,7 @@ security:
           algorithm: bcrypt
         App\Entity\Member:
           algorithm: bcrypt
+
     providers:
         chain_provider:
             chain:
@@ -32,6 +33,7 @@ security:
               login_path: login
               check_path: login
             logout: true
+            logout_on_user_change: true
             anonymous: ~
 
             # activate different ways to authenticate
@@ -45,5 +47,11 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-          #- { path: ^/(login|register)$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+          - { path: ^/(login|register)$, role: IS_AUTHENTICATED_ANONYMOUSLY }
           - { path: ^/dashboard, role: ROLE_ADMIN }
+          - { path: ^/profile/create, role: [ROLE_ADMIN, ROLE_USER] }
+          - { path: ^/profile/edit, role: [ROLE_ADMIN, ROLE_USER] }
+          - { path: ^/changePassword, role: [ROLE_ADMIN, ROLE_USER] }
+          - { path: ^/myorders, role: [ROLE_ADMIN, ROLE_USER] }
+          - { path: ^/add/order, role: [ROLE_ADMIN, ROLE_USER] }
+

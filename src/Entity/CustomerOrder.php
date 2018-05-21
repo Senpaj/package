@@ -77,7 +77,7 @@ class CustomerOrder
         return $this->auto_make;
     }
 
-    public function setauto_make(int $auto_make): self
+    public function setauto_make(string $auto_make): self
     {
         $this->auto_make = $auto_make;
 
@@ -88,7 +88,7 @@ class CustomerOrder
         return $this->auto_model;
     }
 
-    public function setauto_model(int $auto_model): self
+    public function setauto_model(string $auto_model): self
     {
         $this->auto_model = $auto_model;
 

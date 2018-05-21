@@ -31,7 +31,7 @@ class Service
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function getName()
     {
         return $this->name;
     }
@@ -43,7 +43,7 @@ class Service
         return $this;
     }
 
-    public function getPrice(): ?float
+    public function getPrice()
     {
         return $this->price;
     }
