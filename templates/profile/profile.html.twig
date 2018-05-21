@@ -1,14 +1,16 @@
 {% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
 
 {% block title %}
     Profilis
 {% endblock %}
 
 {% block body %}
+    <div class="container justify-content-between">
 
-    <h2 class="page header">Profile</h2>
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    {{ form_end(form) }}
-
+        <h2 class="page header">Profile</h2>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </div>
 {% endblock %}
