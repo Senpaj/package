@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Orders;
-use App\Form\Type\MemberTypeAdminEdit;
+use App\Form\Type\AddOrder;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;

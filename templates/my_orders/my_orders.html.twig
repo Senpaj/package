@@ -21,7 +21,6 @@
             <tbody>
 
             {% for order in pagination %}
-                {% if (is_granted('ROLE_ADMIN')) or (order.fk_client == app.user.id) %}
                     <tr>
                         <td></td>
                         <th>{{ loop.index }}</th>
@@ -49,7 +48,6 @@
                                 <button type="button" class="btn btn-primary">Redaguoti</button>
                             </a>
                         </td>
-                            {% endif %}
                     </tr>
                 {% endif %}
             {% endfor %}
